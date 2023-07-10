@@ -1,0 +1,12 @@
+0,Agriculture
+1,Cross
+2,Education
+3,Food
+4,Health
+5,Livelihood
+6,Logistic
+7,NFI
+8,Nutrition
+9,Protection
+10,Shelter
+11,WASH
