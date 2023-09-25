@@ -1,10 +1,4 @@
-"""
-Author: Giulia Bianchi
-Matr.Nr.: k11819746
-"""
-
 import numpy as np
-
 from torchvision import transforms
 from PIL import Image
 
