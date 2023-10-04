@@ -1,35 +1,27 @@
-IMAGE EXTRAPOLATION - 2021 - GIULIA BIANCHI - first project
-<br> 
-----------------------------------------------------------------------------------------------------------------------------------------
-<br> 
-A neural network (CNN) to extrapolate unknown border pixels of an image.
+MAGE EXTRACTION - Simple CNN - Giulia Bianchi - 2021.
 
-• The test set images have a shape of (90, 90) pixels. <br>
-• The area of known pixels in the test set images is at least (75, 75) <br>
-• The borders containing unknown pixels in the test set images are at least 5 pixels
-  wide on each side. 
-  
-----------------------------------------------------------------------------------------------------------------------------------------
- The Dataset is private and has been collected by JKU students 
+This project aims to predict missing parts of an image (borders in this case).
+The dataset used is privately collected and consist of ~40,000 images, converted to grayscale with with the following weighting of the colour channels: r=0.2989, g=0.5870, b=0.1140.
 
-----------------------------------------------------------------------------------------------------------------------------------------
+`img_preprocessing.py`:<br>
+contains some functions to:<br>
+-resize every datapoint to a 90x90 pixel image.<br>
+-remove (set to zero) specified border of an image randomly (at least 5 pixel for each axis). The removed part is stored as target array.<br>
+-create input arrays (75x75 pixel) without borders and mask arrays.<br>
+Examples can be found at the end of the main file.<br>
 
- <br> The Architecture is very simple, namely: <br>
-SimpleCNN(<br>
-  (hidden_layers): Sequential(<br>
-    (0): Conv2d(1, 32, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))<br>
-    (1): ReLU()<br>
-    (2): Conv2d(32, 32, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))<br>
-    (3): ReLU()<br>
-    (4): Conv2d(32, 32, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))<br>
-    (5): ReLU()<br>
-  )<br>
-  (output_layer): Conv2d(32, 1, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3))<br>
-)<br>
+`best_model3.py`:<br>
+Contains the weights of the best model.
 
+`image_extrapolation.ipynb`: <br>
+The notebook complete with preprocessing, training and evaluation. The training has been done with Google Colab GPU, the architecture is pretty simple and consist of 3 CNN hidden layers (+1 output), each followed by ReLU activation layer. Hyperparameters size are:<br>
+kernel = (7,7)<br>
+stride =(1,1)<br>
+padding =(3,3)<br>
+<br>
+Output examples:<br>
 
-----------------------------------------------------------------------------------------------------------------------------------------
-<br> <br>  The project consist of:<br>
-<b>Image_extrapolation_CNN.ipynb :</b> main file<br>
-<b>ime_preprocess.py:</b> help functions to preprocess images.<br>
-<b>best_model3.py:</b> best model weights.
+![download](https://github.com/Giuliasdfghjk/Giulia-portfolio/assets/80102658/80bc8dc0-9c6c-4518-9b4e-f5f6b446283c)
+
+￼
+
