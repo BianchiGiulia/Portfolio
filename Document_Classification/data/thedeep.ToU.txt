@@ -1,0 +1,3 @@
+Terms of Use
+
+The provided datasets are intended for non-commercial research purposes to promote advancement in the field of natural language processing in the humanitarian community, and is made available free of charge without extending any license or other intellectual property rights. The dataset is provided “as is” without warranty and the raw data should not be publicly shared or hosted, although aggregate findings and visualizations may be. We are not be liable for any damages related to use of the dataset. Feedback is welcome. Upon violation of any of these terms, your rights to use the dataset will end automatically.
