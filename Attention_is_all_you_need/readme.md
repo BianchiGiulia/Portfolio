@@ -4,7 +4,7 @@ Attention Is All You Need - Implementation and Application
 Overview
 --------
 
-This repository contains my implementation of the Transformer model as presented in the seminal paper ["Attention Is All You Need"]([URL](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)). The key focus of this project is to apply the Transformer model to a classification task, demonstrating its versatility and power in handling complex machine learning challenges.
+This repository contains my implementation of the Transformer model as presented in the seminal paper ["Attention Is All You Need"](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf). The key focus of this project is to apply the Transformer model to a classification task, demonstrating its versatility and power in handling complex machine learning challenges.
 
 Implementation
 --------------
