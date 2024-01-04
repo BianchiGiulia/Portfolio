@@ -5,4 +5,4 @@ gensim==3.6.0
 nltk==3.7
 pytorch==2.0.1
 tqdm==4.64.1
-transformers==4.24.0
+transformers>=4.24.0
