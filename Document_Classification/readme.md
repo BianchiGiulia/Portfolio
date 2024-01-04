@@ -41,4 +41,4 @@ Your contributions and feedback are welcome! Feel free to fork this repository, 
 
 * * *
 
-This template can be tailored to fit the specifics of your project, such as detailed results, specific libraries used, or additional context about the approaches.
+
