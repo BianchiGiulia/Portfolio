@@ -44,5 +44,5 @@ Contributions to this project are welcome! Please feel free to fork the reposito
 
 * * *
 
-You can use this template as a starting point and modify it according to the specifics of your project, such as the dataset used, the nature of the classification task, and any additional details you wish to include. ​​
+​​
 
