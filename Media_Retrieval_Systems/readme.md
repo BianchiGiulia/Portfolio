@@ -39,6 +39,8 @@ While in the text-based approach the evaluation has been carried out by comparin
 
 *  Average Precision@k and Recall@k, with k ranging [1,100].
 *  Average nDCG@k, with k=10 and Sørensen–Dice coefficient.
+
+  
 And some more have been implemented specifically for the task:
 
 *  Genre diversity@k: measures how evenly distributed are the genres over the top k retrieved tracks, with k=10.
