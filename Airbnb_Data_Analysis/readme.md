@@ -1,10 +1,12 @@
 Comprehensive Data Analysis of Airbnb Amsterdam Listings
 ========================================================================
 
-Introduction
+Overview
 ------------
 
 This project is a thorough application of data analysis techniques on the Airbnb Amsterdam dataset, acquired from [Inside Airbnb](http://insideairbnb.com/get-the-data.html). The core objective is to uncover patterns, trends, outliers, and unusual distributions within the data, providing valuable insights into the Amsterdam Airbnb market.
+
+**N.B.**: since the size of the notebook was too big, it has been uploaded without outputs. This latter can be seen in the relevant .html file.
 
 Data Source
 -----------
