@@ -4,7 +4,7 @@ Multi Media Retrieval System Project
 Overview
 --------
 
-This project centers on the development of an advanced, content-based music retrieval system. The dataset consists of ∼10,100 songs; 3 text feature embedding (tf-idf, BERT and Word2Vec), 4 audio embedding (MFCC, BLF, i-VEC and DNN) and 1 video feature (VGG19). We retrieve 100 items for each query, for a sum of ∼1,000,100 retrieved items for each of the 8 vector-space model based retrieval systems. We also implement a random baseline and two fusion model, for a total of 11 retrieval systems. The performance of music retrieval systems is evaluated using 5 different metrics: Precision@10, Recall@10, nDCG@10, Genre Coverage@10, and Genre Diversity@10. 
+This project centers on the development of an advanced, content-based music retrieval system. The dataset consists of ∼10,100 songs; 3 text feature embedding (tf-idf, BERT and Word2Vec), 4 audio embedding (MFCC, BLF, i-VEC and DNN) and 1 video feature (VGG19). We retrieve 100 items for each query, for a sum of ∼1,000,100 retrieved items for each of the 8 vector-space model based retrieval systems. We also implement a random baseline and two fusion model, for a total of 11 retrieval systems. The performance of music retrieval systems is evaluated using 5 different metrics: Precision@10, Recall@10, nDCG@10, Genre Coverage@10, and Genre Diversity@10. Finally, I created a User Interface based on the early fusion model, which is available [on Streamlit](https://multimediasearch-ui-5sbvf4gb6xjzgnewswoa9w.streamlit.app/)
 
 ### Notebooks and Methods:
 
