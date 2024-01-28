@@ -20,5 +20,5 @@ Hello! I'm Giulia, a passionate AI enthusiast on the cusp of completing my Bache
 
 # ⚠️ Projects Work in Progress:
 (as of Jan 2024)
-1. News Recommender System(https://github.com/Giuliasdfghjk/Portfolio/tree/main/News_Recommendation_System): This project aims to develop a sophisticated News Recommender System that leverages advanced Natural Language Processing (NLP) techniques to provide personalized news recommendations to users. The system is designed to analyze large volumes of news data, understand user preferences, and deliver relevant news articles that align with individual interests and reading habits. 
+1. [News Recommender System](https://github.com/Giuliasdfghjk/Portfolio/tree/main/News_Recommendation_System): This project aims to develop a sophisticated News Recommender System that leverages advanced Natural Language Processing (NLP) techniques to provide personalized news recommendations to users. The system is designed to analyze large volumes of news data, understand user preferences, and deliver relevant news articles that align with individual interests and reading habits. 
 <br><br> *Dataset: [MIND](https://msnews.github.io/)*
