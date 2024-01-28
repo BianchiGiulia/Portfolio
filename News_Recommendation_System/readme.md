@@ -1,4 +1,4 @@
-News Recommender System (Work in Progress) 
+News Recommender System (⚠️Work in Progress⚠️) 
 ==========================================
 
 Project Overview
