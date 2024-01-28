@@ -19,7 +19,7 @@ In detail the file used in this project are:
 
 *  'id_information_mmsr.tsv': containing info about id,	artist,	song,	album_name.
 *   'id_genres_mmsr.tsv': info about songs genre.
-*   
+   
 **Text-based approach**: 
 
 *  'id_lyrics_tf-idf_mmsr.tsv': sparse matrix with tf-idf values.
@@ -54,7 +54,7 @@ The PCA was tested for various feature combination with n_components = d/2 , whe
 Evaluation and Results
 ----------------------
 Hereunder I report the table with the results of all 11 RS on 5 different metrics:
-
+<img width="661" alt="Screenshot 2024-01-28 at 12 38 51" src="https://github.com/Giuliasdfghjk/Portfolio/assets/80102658/e446f967-051e-4436-b76d-16aa7db395a7">
 
 
 Contributions and Feedback
