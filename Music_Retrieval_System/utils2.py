@@ -34,6 +34,14 @@ def find_top_n_similar_songs(feature_df, N, data_name):
     print("-"*30)
     return result_df
 
+def PPA(X, D):    
+    X_centered = X - np.mean(X, axis=0) #subtract mean 
+    U, S, Vt = np.linalg.svd(X_centered, full_matrices=False) #compute components
+    for i in range(D):
+        X_centered -= np.outer(np.dot(X_centered, Vt[i, :]), Vt[i, :]) #remove top D of them
+    
+    return X_centered
+
 
 def find_common_retrieved_songs(blf_data, w2v_data):
     merged_data = pd.merge(blf_data[['query_song', 'retrieved_song']], 
