@@ -12,7 +12,8 @@ Hello! I'm Giulia, a passionate AI enthusiast on the cusp of completing my Bache
 <br><br> *Dataset: [SMILES strings](https://github.com/Giuliasdfghjk/Portfolio/tree/main/Drug_Activity_Prediction/data)* <br><br>
 
 4. 🏨 [Amsterdam Airbnb Listing Data Analysis](https://github.com/Giuliasdfghjk/Portfolio/tree/main/Airbnb_Data_Analysis): I conductive an extensive exploratory data analysis on Airbnb Amsterdam Listings to uncover patterns, trends, outliers, and unusual distributions within the data, providing valuable insights into the Amsterdam Airbnb market. Preprocessing, descriptive statistics, correlation analysis, clustering techniques and visualization were conducted to gain a comprehensive understanding of the dataset and extract meaningful information that can inform decision-making and strategy development within the Amsterdam Airbnb market.
-<br><br> *Dataset: [Inside Airbnb](http://insideairbnb.com/get-the-data/)*
+<br><br> *Dataset: [Inside Airbnb](http://insideairbnb.com/get-the-data/)* <br><br>
+
 
 5. 🖼️ [Image Border Extraction](https://github.com/Giuliasdfghjk/Portfolio/tree/main/Image_Extraction-SimpleCNN): In a comprehensive data-driven initiative, I, witht he help of my colleagues at the university, meticulously assembled a dataset comprising 40,000 fragmented images, subjecting them to rigorous preprocessing and random border cropping. By training a Convolutional Neural Networks (CNNs), our project centers on the precise reconstruction of missing image data, unearthing concealed information and advancing the field of visual data analysis.
    <br><br> *Dataset: private*
