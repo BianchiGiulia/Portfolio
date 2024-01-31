@@ -6,7 +6,12 @@ Overview
 
 This project is a thorough application of data analysis techniques on the Airbnb Amsterdam dataset, acquired from [Inside Airbnb](http://insideairbnb.com/get-the-data.html). The core objective is to uncover patterns, trends, outliers, and unusual distributions within the data, providing valuable insights into the Amsterdam Airbnb market.
 
-**⚠️N.B.⚠️**: since the size of the notebook and html file was too big, it has been uploaded without outputs. This latter can be seen in the relevant .pdf file.
+**⚠️N.B.⚠️**: since the size of the notebook and html file was too big, it has been uploaded without outputs. This latter can be seen fully in the relevant .pdf file, or part of it have been uploaded in separate notebooks:
+
+*    `EDA_STAT.ipynb` : encompass the whole cleaning process and descriptive statistics
+*    `CORRELATION_static.ipynb` : correlation analysis with static plots
+
+The visualization of interactive plots on Github is *work in progress*. In the meantime you can have a look at the second part of the  [full code](https://github.com/BianchiGiulia/Portfolio/blob/main/Airbnb_Data_Analysis/Airbnb_Amsterdam_Listings.ipynb).
 
 Data Source
 -----------
