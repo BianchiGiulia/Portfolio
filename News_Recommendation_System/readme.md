@@ -9,7 +9,7 @@ This project aims to develop a sophisticated News Recommender System that levera
 Current Status
 --------------
 
-_Work in Progress_: The project is currently under development (As of Jan, 2024), and the current version includes exploratory data analysis + basic functionality for news retrieval and preliminary user preference modeling.
+_Work in Progress_: The project is currently under development (As of Feb, 2024), and the current version includes exploratory data analysis + basic functionality for news retrieval and preliminary user preference modeling.
 
 
 ### Upcoming Features
