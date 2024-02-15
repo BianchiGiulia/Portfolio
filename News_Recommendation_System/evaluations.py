@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from scipy.sparse import find
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 
@@ -17,8 +18,12 @@ def ndcg_at_k(r, k):#RECHECK
     return dcg_at_k(r, k) / dcg_max
 
 
-def evaluate(interaction_matrix, test_matrix, rec_functions, k=10):
+def evaluate(interaction_matrix, test_matrix, rec_functions, k=10, **kwargs):
     
+    def precompute_item_similarity(interaction_matrix):
+        return cosine_similarity(interaction_matrix.T, dense_output=False)
+    
+    item_similarity = precompute_item_similarity(interaction_matrix)
     results_list = []
     
     test_users, test_items_indices, _ = find(test_matrix) #row id, col id, data (only non-zero values)
@@ -41,7 +46,7 @@ def evaluate(interaction_matrix, test_matrix, rec_functions, k=10):
         
         #iterate&average across users
         for user_id, test_items in user_to_test_items.items():
-            recommended_items = rec_func(interaction_matrix, user_id, k=k)  # get recommendations
+            recommended_items = rec_func(interaction_matrix, user_id, k=k, item_similarity=item_similarity, **kwargs)  # get recommendations
             hits_at_k = len(set(recommended_items) & test_items)  # int: n hits
 
             #eval
@@ -75,4 +80,5 @@ def evaluate(interaction_matrix, test_matrix, rec_functions, k=10):
 
     #return as df
     results_df = pd.DataFrame(results_list)
+    
     return results_df
