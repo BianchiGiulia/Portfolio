@@ -1,7 +1,7 @@
 
 import numpy as np
-from scipy.sparse import csr_matrix
-from sklearn.neighbors import NearestNeighbors
+from scipy.sparse.linalg import svds
+
 
 #---------COLLABORATIVE FILTERING---------#
 
@@ -14,35 +14,46 @@ def pop_baseline(interaction_matrix, user_id, k=10, **kwargs):
     popular_non_interacted_items = non_interacted_items[np.argsort(non_interacted_popularity)[::-1]][:k]
     
     return popular_non_interacted_items #output: list of k items for 1 user
+pop_baseline.uses_similarity = 'none'
 
+# memory  based    
 
-def item_based_rs(interaction_matrix, user_id, k=10, item_similarity=None, **kwargs):
-    user_row = interaction_matrix[user_id]
-    scores = user_row.dot(item_similarity).toarray().ravel() #precomputed in the eval functions
-    ranking = scores.argsort()[::-1]
+def itembased_rs(interaction_matrix, user_id, k, similarity_matrix, **kwargs):
+    user_row = interaction_matrix[user_id] #1 x n_items
+    scores = user_row.dot(similarity_matrix).toarray().ravel() #precomputed in the eval function
+    ranking = np.argsort(scores)[::-1]
     interacted = interaction_matrix[user_id].nonzero()[1]
-    ranking = [r for r in ranking if r not in interacted]
-    return ranking[:k] 
+    recommended_indices = [i for i in ranking if i not in interacted][:k]
+    return recommended_indices
+itembased_rs.uses_similarity = 'item'
 
-
-def knn_item_based_rs(interaction_matrix, user_id, k=10, n=5, **kwargs):
-    
-    #fit model
-    knn_model = NearestNeighbors(n_neighbors=n+1, algorithm='brute', metric='cosine')
-    knn_model.fit(interaction_matrix.T)  
-    
+def userbased_rs(interaction_matrix, user_id, k, similarity_matrix, **kwargs):
+    scores = similarity_matrix[user_id].dot(interaction_matrix).toarray().ravel() #precomputed transpose
+    ranking = np.argsort(scores)[::-1]
     interacted = interaction_matrix[user_id].nonzero()[1]
-    item_distances, item_indices = knn_model.kneighbors(interaction_matrix.T, return_distance=True)
-    
-    
-    scores = np.zeros(interaction_matrix.shape[1])#scores based on knn distance
-    for idx in interacted:
-        neighbors_indices = item_indices[idx][1:]
-        neighbors_distances = item_distances[idx][1:]
-        for neighbor_idx, distance in zip(neighbors_indices, neighbors_distances):
-            scores[neighbor_idx] += 1 / (1 + distance)  # inverse distance weighting
-    
-    scores[interacted] = -np.inf #already seen
-    recommended_indices = np.argsort(scores)[::-1][:k]
-    
-    return recommended_indices.tolist()
+    recommended_indices = [i for i in ranking if i not in interacted][:k]
+    return recommended_indices
+userbased_rs.uses_similarity = 'user'
+
+
+# model based
+
+def svd_decompose_sparse(interaction_matrix, f=None):
+    f = min((interaction_matrix.shape))-1 if f is None else f #n of factors= min(n_users, n_items)-1
+    U, s, Vt = svds(interaction_matrix, k=f)
+    U, s, Vt = U[:, ::-1], s[::-1], Vt[::-1, :] #rearrange
+    U = U @ np.diag(np.sqrt(s)) #scaling
+    V = (np.diag(np.sqrt(s)) @ Vt).T
+    return U, V
+
+def svd_recommend_to_list(interaction_matrix, user_id, k, f=None):
+    U, V = svd_decompose_sparse(interaction_matrix, f)
+    scores = U @ V.T
+    u_scores = scores[user_id]
+    interacted = interaction_matrix[user_id].nonzero()[1]
+    u_scores[interacted] = -np.inf #exclude interacted items
+    recs = np.argsort(u_scores)[:k][::-1]
+    return recs
+svd_recommend_to_list.uses_similarity = 'none'
+
+#TO-DO: BAYESIAN PERSONALIZED RANKING
